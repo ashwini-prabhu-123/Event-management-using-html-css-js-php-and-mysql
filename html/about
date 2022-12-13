@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+</head>
+<body>
+    <link rel="stylesheet" href="css/about.css">
+    <div class="ab">
+        <h1>ABOUT US </h1>
+    </div>
+    <div class="desc">
+        <h2>Event Management System is a Web-based prototype for Events. <br> In this system, the user needs to register to the event that is going to be held. <br> This system is written in HTML, CSS, JS, PHP and MYSQL.</h2>
+    </div>
+    <div class="container">
+        <section id="testim" class="testim">
+                 <div class="testim-cover">
+                    <div class="wrap">
+        
+                        <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
+                        <span id="left-arrow" class="arrow left fa fa-chevron-left "></span>
+                        <ul id="testim-dots" class="dots">
+                            <li class="dot active"></li><!--
+                            --><li class="dot"></li><!--
+                            --><li class="dot"></li><!--
+                            --><li class="dot"></li><!--
+                            --><li class="dot"></li>
+                        </ul>
+                        <div id="testim-content" class="cont">
+                            
+                            <div class="active">
+                                <div class="img"><img src="images/main.jpg" alt="event"></div>
+                                <h2>Event Management</h2>
+                                <p>"Do u like to Participate in events? Then come visit our website."</p>
+                                <p>"Let's get the party started!"</p>                    
+                            </div>
+        
+                            <div>
+                                <div class="img"><img src="images/aya.jpg" alt="ayyappa"></div>
+                                <h2>Mr. AYYAPPA B K</h2>
+                                <p>Hi, I'm Ayyappa B K</p> 
+                                <p>Innovative Programmer striving to make the world a more unified and connected place. A creative thinker, adapt in software development and working with various data structures.</p>                   
+                            </div>
+        
+                            <div>
+                                <div class="img"><img src="images/me.jpg" alt="Chiranth"></div>
+                                <h2>Mr. CHIRANTH</h2>
+                                <p>Hi, I'm Chiranth</p>
+                                <p> Currently pursuing Bachelor of Technology in Computer Science 🎓.
+                                    I'm a Android Developer and AI ML enthusiast.I enjoy Gaming and watching Anime.</p>                    
+                            </div>
+        
+                            <div>
+                                <div class="img"><img src="images/ash.jpg" alt="ASHWINI"></div>
+                                <h2>Ms. ASHWINI</h2>
+                                <p>Hi, I'm Ashwini</p> 
+                                <p>Currently student at presi your co pilot in the journey of college life and your fellow gamer and binge watcher</p>                   
+                            </div>
+        
+                            <div>
+                                <div class="img"><img src="images/teja.jpg" alt="TEJA"></div>
+                                <h2>Mr. A TEJA KIRAN</h2>
+                                <p>Hi, I'm Teja kiran, from KARNATAKA, INDIA. </p>   
+                                <p>currently pursuing B.Tech in Presidency University. Interested in Web development , App development</p>                 
+                            </div>
+        
+                        </div>
+        
+                    </div>
+                 </div>
+            </section>
+        </div>
+        <script>// vars
+            'use strict'
+            var	testim = document.getElementById("testim"),
+                    testimDots = Array.prototype.slice.call(document.getElementById("testim-dots").children),
+                testimContent = Array.prototype.slice.call(document.getElementById("testim-content").children),
+                testimLeftArrow = document.getElementById("left-arrow"),
+                testimRightArrow = document.getElementById("right-arrow"),
+                testimSpeed = 4500,
+                currentSlide = 0,
+                currentActive = 0,
+                testimTimer,
+                    touchStartPos,
+                    touchEndPos,
+                    touchPosDiff,
+                    ignoreTouch = 30;
+            ;
+            
+            window.onload = function() {
+            
+                // Testim Script
+                function playSlide(slide) {
+                    for (var k = 0; k < testimDots.length; k++) {
+                        testimContent[k].classList.remove("active");
+                        testimContent[k].classList.remove("inactive");
+                        testimDots[k].classList.remove("active");
+                    }
+            
+                    if (slide < 0) {
+                        slide = currentSlide = testimContent.length-1;
+                    }
+            
+                    if (slide > testimContent.length - 1) {
+                        slide = currentSlide = 0;
+                    }
+            
+                    if (currentActive != currentSlide) {
+                        testimContent[currentActive].classList.add("inactive");            
+                    }
+                    testimContent[slide].classList.add("active");
+                    testimDots[slide].classList.add("active");
+            
+                    currentActive = currentSlide;
+                
+                    clearTimeout(testimTimer);
+                    testimTimer = setTimeout(function() {
+                        playSlide(currentSlide += 1);
+                    }, testimSpeed)
+                }
+            
+                testimLeftArrow.addEventListener("click", function() {
+                    playSlide(currentSlide -= 1);
+                })
+            
+                testimRightArrow.addEventListener("click", function() {
+                    playSlide(currentSlide += 1);
+                })    
+            
+                for (var l = 0; l < testimDots.length; l++) {
+                    testimDots[l].addEventListener("click", function() {
+                        playSlide(currentSlide = testimDots.indexOf(this));
+                    })
+                }
+            
+                playSlide(currentSlide);
+            
+                // keyboard shortcuts
+                document.addEventListener("keyup", function(e) {
+                    switch (e.keyCode) {
+                        case 37:
+                            testimLeftArrow.click();
+                            break;
+                            
+                        case 39:
+                            testimRightArrow.click();
+                            break;
+            
+                        case 39:
+                            testimRightArrow.click();
+                            break;
+            
+                        default:
+                            break;
+                    }
+                })
+                    
+                    testim.addEventListener("touchstart", function(e) {
+                            touchStartPos = e.changedTouches[0].clientX;
+                    })
+                
+                    testim.addEventListener("touchend", function(e) {
+                            touchEndPos = e.changedTouches[0].clientX;
+                        
+                            touchPosDiff = touchStartPos - touchEndPos;
+                        
+                            console.log(touchPosDiff);
+                            console.log(touchStartPos);	
+                            console.log(touchEndPos);	
+            
+                        
+                            if (touchPosDiff > 0 + ignoreTouch) {
+                                    testimLeftArrow.click();
+                            } else if (touchPosDiff < 0 - ignoreTouch) {
+                                    testimRightArrow.click();
+                            } else {
+                                return;
+                            }
+                        
+                    })
+            }</script>
+</body>
+</html>
+<body>
+   
+    </body>
