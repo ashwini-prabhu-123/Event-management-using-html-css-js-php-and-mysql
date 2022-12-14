@@ -85,3 +85,4 @@ $event_query = "SELECT * FROM $event_name";
     ?>
   </body>
 </html>
+
