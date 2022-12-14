@@ -101,7 +101,7 @@ else{
          <p><?php echo "Date: ",htmlentities($row['event_date']);?></p>
          </div>
      </div>
-         <a href='event_page.php?eventid=<?php echo htmlentities($row['event_id'])?>'><i class='bi bi-link-45deg'>Regiter</i></a>
+         <a href='event_page.php?eventid=<?php echo htmlentities($row['event_id'])?>'><i class='bi bi-link-45deg'>Register</i></a>
      </div>
  </div>
 <?php
