@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" href="css/home_page.css">
+    <link rel="stylesheet" href="/css/home_page.css">
 </head>
 <body>
 <?php
@@ -33,7 +33,7 @@ else{
             <ul>
                 <li><a href="">Home</a></li>
                 <li><a href="#event-div">Events</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="html/about.html">About</a></li>
                 <li><button type="submit" class="lgin btn"><a href=<?php echo $page_slct; ?>><?php echo"<p>$login_stats</p>";?></a></button></li>
             </ul>
         </nav>
