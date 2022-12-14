@@ -3,7 +3,7 @@
    <head>
       <meta charset="utf-8">
       <title>Login and Registration </title>
-      <link rel="stylesheet" href="css/login_reg_page.css">
+      <link rel="stylesheet" href="../css/login_reg_page.css">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
      <body style="background-image: url('https://blog.stucred.com/wp-content/uploads/2019/04/david-calderon-973699-unsplash.jpg');background-repeat:no-repeat;background-attachment:fixed;background-size:cover;background-position:center center ">
