@@ -33,7 +33,7 @@ else{
             <ul>
                 <li><a href="">Home</a></li>
                 <li><a href="#event-div">Events</a></li>
-                <li><a href="html/about.html">About</a></li>
+                <li><a href="../html/about.html">About</a></li>
                 <li><button type="submit" class="lgin btn"><a href=<?php echo $page_slct; ?>><?php echo"<p>$login_stats</p>";?></a></button></li>
             </ul>
         </nav>
